@@ -1,0 +1,72 @@
+<!-- 1. Tạo form thêm mới user
+Thông tin user gồm các trường: tên user, email, số điện thoại, tên công ty, ghi chú.
+Tự style cho form.
+
+2. Viết hàm validate từng trường xem đã nhập đủ dữ liệu chưa, nếu chưa thì hiển thị message lỗi ngay bên dưới từng input bị thiếu dữ liệu.
+
+3. Submit form bằng jquery:
+Thực hiện validate form trước khi submit.
+Gọi Ajax để submit form. (Sử dụng https://reqres.in/ api Create)
+
+4. Thay đổi hàm validate, kiểm tra định dạng dữ liệu nhập vào. Yêu cầu:
+trường tên chỉ chấp nhận các ký tự chữ
+trường email nhập đúng định dạng email
+trường số điện thoại chỉ chấp nhận ký tự số
+
+5. Disabled nút submit trong trường hợp form chưa được validate. -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Form</title>
+  <link rel="stylesheet" type="text/css" href="CSS/hw2.css">
+  <link href="https://fonts.googleapis.com/css?family=Bitter" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+</head>
+
+<body class="Row">
+  <div class="container">
+    <h1>Sign Up</h1>
+    <form id="form-register" class="Col" method="POST">
+
+      <div>
+        <label for="user">User*:</label><br>
+        <input type="text" id="user" name="user" placeholder="Enter User"><br>
+        <p id="user_error"><br></p>
+      </div>
+
+      <div>
+        <label for="email">Email*:</label><br>
+        <input type="text" id="email" name="email" placeholder="Enter Email"><br>
+        <p id="email_error"><br></p>
+      </div>
+
+      <div>
+        <label for="phone">Phone*:</label><br>
+        <input type="text" id="phone" name="phone" placeholder="Enter Phone"><br>
+        <p id="phone_error"><br></p>
+      </div>
+      
+      <div>
+        <label for="company">Company*:</label><br>
+        <input type="text" id="company" name="company" placeholder="Enter Company"><br>  
+        <p id="company_error"><br></p>
+      </div>
+
+      <div>
+        <label for="note">Note:</label><br>
+        <textarea id="note" name="note"></textarea><br>
+        <!-- <p id="note_error"><br></p> -->
+      </div>
+
+      <input type="submit" id ="submit" value="Submit" disabled="disabled">
+      
+    </form>
+  </div>
+  
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" src="JavaScript/hw2.js"></script>
+</body>
+
+</html>
